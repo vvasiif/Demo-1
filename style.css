@@ -80,17 +80,19 @@ body pre {
     width: 100%;
     height: 100%;
     z-index: 99999;
-    background-color: #080808;
+    background-color: #28282B;
 }
 
 .doc-loader img {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: auto;
     position: absolute;
     top: 50%;    
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
 
 .content-1170 {
     width: 1170px;    
@@ -498,6 +500,21 @@ body .sm-clean li.current_page_item > a {
 
 }
 
+.instagram-media {
+    height: 400px !important;
+    overflow: hidden;
+}
+.instagram-media a {
+    display: none; /* Hide the header, Instagram username, and link */
+}
+.instagram-media blockquote {
+    height: 100%;
+}
+/* Target the header that contains the Instagram username */
+.instagram-media header {
+    display: none; /* Hide the entire header containing the username */
+}
+
 .service-holder {
     margin: 25px 0;
 }
@@ -516,10 +533,10 @@ body .sm-clean li.current_page_item > a {
 
 .service-txt {
     float: left;
-    margin-left: 25px;
+    margin-left: 0px;
     text-align: left;
     line-height: 25px;
-    width: calc(70% - 25px);
+    width: calc(85%);
 }
 
 .service-txt h4 {
