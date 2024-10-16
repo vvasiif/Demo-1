@@ -92,14 +92,76 @@
                         </h1>
                         <h6 class=" center">Exclusive Investor Event at Dubai Autodrome – November 11, 2024</h6>
                         <div class="d-flex justify-content-center">
-                            <a href="index.html#services" class="pricing-button scroll" style="display: inline-block;">More Info
-
+                            <a href="#" class="pricing-button scroll mt-5" style="display: inline-block;" id="popupButton">
+                               Inquire
                             </a>
+                            
+                            <!-- Modal Popup -->
+                            <div class="modal-popup" id="infoPopup" style="display: none;">
+                                <div class="modal-content">
+                                    <button type="button" class="btn btn-secondary align-right" id="closePopup">X</button>
+                            
+                                    <div class="contact-form text-dark mt-3">
+                                        <p><input id="name" type="text" name="your-name" placeholder="Name"></p>
+                                        <p class="mb-3">
+                                            <select id="country-code" name="country-code">
+                                                <option value="+1">+1 (USA)</option>
+                                                <option value="+44">+44 (UK)</option>
+                                                <option value="+91">+91 (India)</option>
+                                                <option value="+61">+61 (Australia)</option>
+                                                <option value="+81">+81 (Japan)</option>
+                                                <!-- Add more country codes as needed -->
+                                            </select>
+                                            <input id="phone" type="tel" name="your-phone" placeholder="Phone Number">
+                                        </p>
+                                        <p class="mt-4"><input id="contact-email" type="email" name="your-email" placeholder="Email"></p>
+                                   
+                                        <p class="contact-submit-holder"><input type="submit" value="SEND"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
                 </div>
             </div>
+
+            <div class="modal-overlay" id="overlay"></div>
+            <style>
+                .modal-popup {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 400px; /* You can adjust the width as needed */
+                    z-index: 1000 !important;
+                    background-color: #1e1e1e;
+                    border: 1px solid #B906FE;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+                    display: none; /* Hide initially */
+                }
+            
+                .modal-content {
+                    padding: 20px; /* Add padding to modal content */
+                    z-index: 1000 !important;
+
+                }
+            
+                /* Overlay */
+                .modal-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    /* background-color: rgba(0, 0, 0, 0.5); */
+                    z-index: 0; /* Behind the modal */
+                    display: none; /* Hide initially */
+                }
+            </style>
 
             <!-- Services -->
             <div id="services" class="section page-split">
@@ -482,16 +544,15 @@
                             <div class="list-group">
                                 <div class="list-group-item">
                                     <h5 class="font-weight-bold"><br>Schedule:</h5>
-                                    <ul>
-                                        <li><i class="fas fa-coffee"></i> 9:00 AM: Investor Welcome & Breakfast</li>
-                                        <li><i class="fas fa-eye"></i> 10:30 AM: Private Tour of the Dubai Autodrome & Technology Showcase</li>
-                                        <li><i class="fas fa-utensils"></i> 12:00 PM: Lunch & Networking with Key Industry Figures</li>
-                                        <li><i class="fas fa-flag-checkered"></i> 2:00 PM: Solo Indy Race – Toby Sowery</li>
-                                        <li><i class="fas fa-question-circle"></i> 3:30 PM: Post-Race Investor Session & Q&A with Toby</li>
-                                        <li><i class="fas fa-glass-cheers"></i> 5:00 PM: Closing Remarks</li>
-                                    </ul>
+                                    <p><i class="fas fa-coffee"></i> 9:00 AM: Investor Welcome & Breakfast</p>
+                                    <p><i class="fas fa-eye"></i> 10:30 AM: Private Tour of the Dubai Autodrome & Technology Showcase</p>
+                                    <p><i class="fas fa-utensils"></i> 12:00 PM: Lunch & Networking with Key Industry Figures</p>
+                                    <p><i class="fas fa-flag-checkered"></i> 2:00 PM: Solo Indy Race – Toby Sowery</p>
+                                    <p><i class="fas fa-question-circle"></i> 3:30 PM: Post-Race Investor Session & Q&A with Toby</p>
+                                    <p><i class="fas fa-glass-cheers"></i> 5:00 PM: Closing Remarks</p>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -704,6 +765,29 @@
             </div>
         </footer>
     </div>
+    <script>
+        const popupButton = document.getElementById('popupButton');
+        const infoPopup = document.getElementById('infoPopup');
+        const overlay = document.getElementById('overlay');
+        const closePopup = document.getElementById('closePopup');
+    
+        popupButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            overlay.style.display = 'block';
+            infoPopup.style.display = 'block';
+        });
+    
+        closePopup.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            infoPopup.style.display = 'none';
+        });
+    
+        overlay.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            infoPopup.style.display = 'none';
+        });
+    </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
         integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
